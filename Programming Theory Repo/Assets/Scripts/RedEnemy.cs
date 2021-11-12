@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class RedEnemy : Enemy
 {
-    
+    // Inheritage No need of polymorphism
 
 }

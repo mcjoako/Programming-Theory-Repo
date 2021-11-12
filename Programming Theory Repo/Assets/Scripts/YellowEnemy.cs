@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class YellowEnemy : Enemy
 {
-
+    // Inheritage No need of polymorphism
 }
