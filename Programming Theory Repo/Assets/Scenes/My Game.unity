@@ -1067,8 +1067,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9daf4937450730440904cb3019fa6b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4717277366449468162, guid: bad1bcd514dd2dc40885179858ec9e5f, type: 3}
-  enemies: 1000
+  redEnemyPrefab: {fileID: 4717277366449468162, guid: bad1bcd514dd2dc40885179858ec9e5f, type: 3}
+  orangeEnemyPrefab: {fileID: 7935460809733132647, guid: f4fa9ebe137e8094eacfaac21c60063c, type: 3}
+  yellowEnemyPrefab: {fileID: 8159483908739896704, guid: 3dae5790da69a094e952b0e1a8de9903, type: 3}
+  enemies: 300
 --- !u!4 &1133667778
 Transform:
   m_ObjectHideFlags: 0
