@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // All variables that could be private for encapsulation
     public float forceMove;
     public float forceJump;
     private Rigidbody playerRb;
