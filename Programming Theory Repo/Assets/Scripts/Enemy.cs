@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         enemyRb = GetComponent<Rigidbody>();
     }
 
@@ -32,9 +33,19 @@ public class Enemy : MonoBehaviour
 
     private void DestroyBalls()
     {
-        if (transform.position.y < -100)
+        if (transform.position.y < -1000)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Enviroment"))
+        {
+            Debug.Log("Enemy Jump");
+            enemyRb.AddForce(Vector3.up * speed * Time.deltaTime * 200, ForceMode.Impulse);
         }
     }
 

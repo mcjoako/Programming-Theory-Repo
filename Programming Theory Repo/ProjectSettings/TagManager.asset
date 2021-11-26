@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
+  - Ground
+  - Enemy
+  - WallForward
+  - WallBack
+  - WallLeft
+  - WallRight
+  - Power Speed
+  - Power Force
+  - Enviroment
   layers:
   - Default
   - TransparentFX

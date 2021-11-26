@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerBackup : MonoBehaviour
 {
     // All variables that could be private for encapsulation
     public float forceMove;
@@ -43,14 +43,33 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Abstraction
-        
+        PlayerLimits();
         PlayerJump();
         PLayerMove();
         
         
 
     }
-   
+
+    private void PlayerLimits()
+    {
+        if (transform.position.z < -zBound)
+        {
+            playerRb.AddForce(Vector3.forward * forceMove * crash, ForceMode.Impulse);
+        }
+        if (transform.position.z > zBound)
+        {
+            playerRb.AddForce(Vector3.back * forceMove * crash, ForceMode.Impulse);
+        }
+        if (transform.position.x < -xBound)
+        {
+            playerRb.AddForce(Vector3.right * forceMove * crash, ForceMode.Impulse);
+        }
+        if (transform.position.x > xBound)
+        {
+            playerRb.AddForce(Vector3.left * forceMove * crash, ForceMode.Impulse);
+        }
+    }
     private void PlayerJump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
