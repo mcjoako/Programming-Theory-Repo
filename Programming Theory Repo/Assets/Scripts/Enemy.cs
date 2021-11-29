@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
     {
         
         enemyRb = GetComponent<Rigidbody>();
+        float multiplier = 5;
+        Vector3 lookDirection = (Goal.transform.position - transform.position).normalized;
+        enemyRb.AddForce(lookDirection * speed * Time.deltaTime * multiplier, ForceMode.Impulse);
     }
 
     // Update is called once per frame
@@ -33,7 +36,7 @@ public class Enemy : MonoBehaviour
 
     private void DestroyBalls()
     {
-        if (transform.position.y < -1000)
+        if (transform.position.y < -3000)
         {
             Destroy(gameObject);
         }
