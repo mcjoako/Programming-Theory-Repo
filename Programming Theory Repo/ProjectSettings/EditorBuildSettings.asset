@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/My Game.unity
     guid: 9bdcc982658233c49aca384f74cb26df
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 6d7d3a7202fed32459f1cb8e5c7b565d
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: efeb5fbb11601d545ad064ea708c7d5d
+  - enabled: 1
+    path: Assets/Scenes/Loading Screen.unity
+    guid: 3e5981d05d910d244a67e74c8a8e7724
+  - enabled: 1
+    path: Assets/Scenes/Screen Map.unity
+    guid: d0ec7575641ff9f45911dc5c4dd7d78e
+  - enabled: 1
+    path: Assets/Scenes/Title Screen.unity
+    guid: d7eb0b0da1a5ede41b705c76ff1ceb6b
   m_configObjects: {}

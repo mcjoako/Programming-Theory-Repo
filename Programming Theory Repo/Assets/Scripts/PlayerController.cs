@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     public float forceJump;
     private Rigidbody playerRb;
     public float gravityValue;
-    private float zBound = 22;
-    private float xBound = 22;
+    //private float zBound = 22;
+    //private float xBound = 22;
     public float crash;
     private float playerSpeed;
     public float maxSpeed;
@@ -22,11 +22,12 @@ public class PlayerController : MonoBehaviour
     private bool hasPowerForce = false;
     private bool isOnGround = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    
 
-        Physics.gravity *= gravityValue;
+    // Start is called before the first frame update
+    void Awake()
+    {
+        Physics.gravity = new Vector3(0, -gravityValue, 0);        
         playerRb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("Focal Point");
 
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviour
         
 
     }
+
+    
    
     private void PlayerJump()
     {

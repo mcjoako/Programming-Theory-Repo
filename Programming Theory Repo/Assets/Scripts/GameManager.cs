@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int positionInRace; // needs to track position in race
     public bool levelPlaying; // Checks if the player is playing a level
     public bool pause = false;
+    public GameObject pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && levelPlaying)
         {
             pause = TogglePause();
+            pauseMenu.gameObject.SetActive(true);
         }
     }
 
@@ -36,34 +38,93 @@ public class GameManager : MonoBehaviour
         // Need to think about the score
     }
 
-    void OnGUI()
+    public void LoadMenu()  // When a level is selected this function starts
     {
-        if (pause)
-        {
-            GUILayout.Label("Game is paused!");
-            if (GUILayout.Button("Click me to unpause"))
-                pause = TogglePause();
-        }
-
+        
+        SceneManager.LoadScene("Title Screen"); // check old scripts        
     }
 
-    public void StartLevel()  // When a level is selected this function starts
+
+
+    public void StartLevelOne()  // When a level is selected this function starts
     {
         levelPlaying = true;
-        positionInRace = 0;
-        SceneManager.LoadScene("Selected Level"); // check old scripts        
+        
+        SceneManager.LoadScene("Level 1"); // check old scripts        
+    }
+
+    public void StartLevelTwo()  // When a level is selected this function starts
+    {
+        levelPlaying = true;
+        
+        SceneManager.LoadScene("Level 2"); // check old scripts        
+    }
+
+    public void StartLevelThree()  // When a level is selected this function starts
+    {
+        levelPlaying = true;
+        
+        SceneManager.LoadScene("Level 3"); // check old scripts        
+    }
+
+    public void StartLevelFour()  // When a level is selected this function starts
+    {
+        levelPlaying = true;
+        
+        SceneManager.LoadScene("Level 4"); // check old scripts        
+    }
+
+    public void StartLevelFive()  // When a level is selected this function starts
+    {
+        levelPlaying = true;
+        
+        SceneManager.LoadScene("Level 5"); // check old scripts        
+    }
+
+    public void StartLevelSix()  // When a level is selected this function starts
+    {
+        levelPlaying = true;
+        
+        SceneManager.LoadScene("Level 6"); // check old scripts        
+    }
+
+    public void StartLevelSeven()  // When a level is selected this function starts
+    {
+        levelPlaying = true;
+        
+        SceneManager.LoadScene("Level 7"); // check old scripts        
+    }
+
+    public void StartLevelEight()  // When a level is selected this function starts
+    {
+        levelPlaying = true;
+        
+        SceneManager.LoadScene("Level 8"); // check old scripts        
+    }
+
+    public void StartLevelNine()  // When a level is selected this function starts
+    {
+        levelPlaying = true;
+        
+        SceneManager.LoadScene("Level 9"); // check old scripts        
     }
 
     public void Continue()  // When Continue button is clicked load last played level
     {
         levelPlaying = true;
-        positionInRace = 0;
+        
         SceneManager.LoadScene("Selected Level"); // check old scripts        
+    }
+
+    public void ResumeLevel()
+    {
+        pause = TogglePause();
     }
 
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 
     public void LostTheRace()
